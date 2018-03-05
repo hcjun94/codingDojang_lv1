@@ -27,7 +27,8 @@ public class daum_entry_test {
             // 메모리는 더 차지하지만 CPU 자원을 적게 활용
         }
         System.out.println("Closest two dots are: {" +
-                nFinalTuple[0] + ", " + nFinalTuple[1]
+                nFinalTuple[0] + ", " +
+                nFinalTuple[1]
                 + "}");
     }
 }
