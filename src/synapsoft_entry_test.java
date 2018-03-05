@@ -20,7 +20,6 @@ public class synapsoft_entry_test {
         ArrayList<String> listArray = new ArrayList<>();
 
 
-
         int nKimLee = 0;
         int nLeeJaeYoung = 0;
         String lastName;
@@ -37,7 +36,7 @@ public class synapsoft_entry_test {
                 nLeeJaeYoung++;
             }
             //List Without repeat
-            if(!listArray.contains(nameStr)){
+            if (!listArray.contains(nameStr)) {
                 listArray.add(nameStr);
             }
         }
