@@ -12,20 +12,21 @@
  */
 
 public class number_3_in_clock {
-    public static void main(String[] args){
-        int threeInClock = 0;
+    public static void main(String[] args) {
+        int threeInMin = 0;
+        int threeInHr = 0;
 
-        for(int hr =0;hr<24;hr++){
-            for (int min=0;min<60;min++){
-                if(String.valueOf(min).contains("3")) {
-                    threeInClock++;
-                }
-                else if(String.valueOf(hr).contains("3")){
-                    threeInClock++;
+        for (int hr = 0; hr < 24; hr++) {
+            if (String.valueOf(hr).contains("3")) {
+                threeInHr++;
+                continue;
+            }
+            for (int min = 0; min < 60; min++) {
+                if (String.valueOf(min).contains("3")) {
+                    threeInMin++;
                 }
             }
         }
-
-        System.out.println((threeInClock)*60+" Seconds");
+        System.out.println((threeInHr * 60 + threeInMin) * 60 + " Seconds");
     }
 }
