@@ -18,29 +18,41 @@ e.g.)
 (성능이 70과 65인 부품을 장착하면 됨)
  */
 
+import java.util.Arrays;
+import java.util.Collections;
 
 public class cost_effectiveness {
     public static void main(String[] args) {
 
+        /*
+        CONSTANTS FOR ADDITIONAL PROBLEM SOLVING
+         */
+        final int DEF_COST = 10;
+        final int DEF_POWER = 150;
+        final int ADD_COST = 3;
+        final Integer[] ADD_POWER = {30, 70, 15, 40, 65};
 
-        int defaultCost = 10;
-        int defaultPower = 150;
-        final int addonCost = 3;
-        int[] addonPower = {30, 70, 15, 40, 65};
 
+        System.out.println("Maximum Cost Effectiveness is " +
+                (int) Math.floor(maxCostEffect(DEF_COST, DEF_POWER, ADD_COST, ADD_POWER)));
+    }
+
+    private static float maxCostEffect(int defC, int defP, int addCost, Integer[] addonPower) {
+        float maxCostEffect = defP / defC;
+        float bestCost = defC;
+        float bestPower = defP;
         float costEffect;
-        float maxCostEffect = defaultPower / defaultCost;
+        Arrays.sort(addonPower, Collections.reverseOrder());
 
-
-//TODO more than one parts adding
-        for (int anAddonPower : addonPower) {
-            costEffect = (defaultPower + anAddonPower) / (defaultCost + addonCost);
-
+        for (int i = 0; i < addonPower.length; i++) {
+            Integer anAddonPower = addonPower[i];
+            costEffect = (bestPower + anAddonPower) / (bestCost + addCost);
             if (maxCostEffect < costEffect) {
                 maxCostEffect = costEffect;
+                bestCost += addCost;
+                bestPower += anAddonPower;
             }
         }
-        System.out.println(maxCostEffect);
-
+        return maxCostEffect;
     }
 }
