@@ -26,8 +26,9 @@ public class printingOXs {
         Scanner reader = new Scanner(System.in);
         int input = reader.nextInt();
 
+
         for (int i = 0; i < input; i++) {
-            
+
 
             //input <<1;
         }
