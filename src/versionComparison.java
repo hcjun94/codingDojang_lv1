@@ -1,15 +1,23 @@
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class versionComparison {
     public static void main(String[] args) {
-        String firstNum, secondNum;
+        String firstNum;
+        String fNumArr[];
         Scanner sc = new Scanner(System.in);
 
         System.out.print("Input the first version Number to compare: ");
-        firstNum = sc.next();
-        System.out.print("Input the second version number to compare: ");
-        secondNum = sc.next();
+        firstNum = sc.nextLine();
 
-        System.out.println(firstNum + secondNum);
+
+
+        System.out.println(firstNum);
+
+        fNumArr = firstNum.split("\\.");
+
+
+
+
     }
 }
